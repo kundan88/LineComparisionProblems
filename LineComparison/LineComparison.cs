@@ -6,36 +6,37 @@ using System.Threading.Tasks;
 
 namespace LineComparison
 {
-    class Program
-    {
-        public void EqualityOfTwoLine()
-        {
-            Console.WriteLine("Welcome to Line Comparision Program");
-            Console.WriteLine();
-            Console.WriteLine("Enter the coordinates for first line: ");
+	class Program
+	{
+		public void LineIsGreaterOrEqual()
+		{
 
-            int x1 = int.Parse(Console.ReadLine());
-            int y1 = int.Parse(Console.ReadLine());
-            int x2 = int.Parse(Console.ReadLine());
-            int y2 = int.Parse(Console.ReadLine());
+			int X, Y;
+			Console.Write("Compare Line\n");
+			Console.Write("-----------------------");
+			Console.Write("\n\n");
 
-            double line1 = Math.Sqrt((Math.Pow((x2 - x1), 2)) + Math.Pow((y2 - y1), 2));
-            Console.WriteLine(" length of first Line: " + Math.Round(line1, 3));
+			Console.Write("Enter the value for X coordinate :");
+			X = Convert.ToInt16(Console.ReadLine());
+			Console.Write("Enter the value for Y coordinate :");
+			Y = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine();
-            Console.WriteLine("Enter the coordinates for second line: ");
+			//Compare Method
+			int compare_val = X.CompareTo(Y);
+			Console.WriteLine(compare_val);
 
-            int x3 = int.Parse(Console.ReadLine());
-            int y3 = int.Parse(Console.ReadLine());
-            int x4 = int.Parse(Console.ReadLine());
-            int y4 = int.Parse(Console.ReadLine());
-
-            double line2 = Math.Sqrt((Math.Pow((x4 - x3), 2)) + Math.Pow((y4 - y3), 2));
-            Console.WriteLine(" length of second Line: " + Math.Round(line2, 3));
-            Console.WriteLine(" both lines equal: " + line1.Equals(line2));
-
-
-        }
-
-    }
+			if (compare_val == 0)
+			{
+				Console.WriteLine("Both Lines are equal");
+			}
+			else if (compare_val < 0)
+			{
+				Console.WriteLine("X is less than Y");
+			}
+			else if (compare_val > 0)
+			{
+				Console.WriteLine("X is Greater than Y");
+			}
+		}
+	}
 }
